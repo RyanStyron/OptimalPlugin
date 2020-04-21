@@ -14,3 +14,10 @@ CommandBack:
   back-error: "&4&l(!)&c There is no stored location for you to teleport back to."
   back-message: "&6&l(!)&e Teleporting to your last location..."
 
+CommandHome:
+  home-null-error: "&4&l(!)&c You do not have a home to delete."
+  home-exists-error: "&4&l(!)&c You already have a home. Use /deletehome before setting a new one."
+  home-deleted-message: "&6&l(!)&e Your home has been deleted."
+  home-created-message: "&6&l(!)&e Your home has been set to your current coordinates."
+  home-teleport-message: "&6&l(!)&e Teleporting to your home..."
+

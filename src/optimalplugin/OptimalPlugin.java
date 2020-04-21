@@ -8,9 +8,11 @@ import optimalplugin.command.commands.general.CommandHead;
 import optimalplugin.command.commands.world.CommandBack;
 import optimalplugin.command.commands.world.CommandHub;
 import optimalplugin.command.commands.world.CommandSpawn;
+import optimalplugin.command.commands.world.home.CommandDeleteHome;
+import optimalplugin.command.commands.world.home.CommandHome;
+import optimalplugin.command.commands.world.home.CommandSetHome;
 import optimalplugin.listener.global.SignColor;
 import optimalplugin.listener.global.SpawnGamemode;
-import optimalplugin.listener.global.SpawnSpeed;
 import optimalplugin.utils.MessageUtils;
 import optimalplugin.utils.FileManagers.BackFileManager;
 import optimalplugin.utils.FileManagers.HomeFileManager;
@@ -44,10 +46,12 @@ public class OptimalPlugin extends JavaPlugin {
 		new CommandHub(this);
 		new CommandSpawn(this);
 		new CommandBack(this);
+		new CommandHome(this);
+		new CommandSetHome(this);
+		new CommandDeleteHome(this);
 
 		// Global listeners.
 		new SignColor(this);
-		new SpawnSpeed(this);
 		new SpawnGamemode(this);
 
 		System.out.println(MessageUtils.convertChatColors("&6&l(!)&e OptimalPlugin enabled!"));
