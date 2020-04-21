@@ -24,8 +24,8 @@ public class SpawnSpeed implements Listener {
         GameMode gamemode = player.getGameMode();
 
         if (playerLocation.distanceSquared(spawnLocation) <= 10000 && gamemode == GameMode.ADVENTURE)
-            player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(.5);
+            player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.3);
         else
-            player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(.1);
+            player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.1);
     }
 }
