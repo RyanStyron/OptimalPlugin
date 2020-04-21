@@ -10,7 +10,8 @@ commands:
   spawn:
   back:
   home:
-  delhome:
+  deletehome:
+    aliases: [delhome]
   sethome:
   warp:
   delwarp:

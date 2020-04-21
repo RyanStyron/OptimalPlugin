@@ -15,7 +15,7 @@ CommandBack:
   back-message: "&6&l(!)&e Teleporting to your last location..."
 
 CommandHome:
-  home-null-error: "&4&l(!)&c You do not have a home to delete."
+  home-null-error: "&4&l(!)&c You do not have a home set."
   home-exists-error: "&4&l(!)&c You already have a home. Use /deletehome before setting a new one."
   home-deleted-message: "&6&l(!)&e Your home has been deleted."
   home-created-message: "&6&l(!)&e Your home has been set to your current coordinates."
