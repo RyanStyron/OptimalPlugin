@@ -8,6 +8,7 @@ import optimalplugin.command.commands.general.CommandHead;
 import optimalplugin.command.commands.world.CommandBack;
 import optimalplugin.command.commands.world.CommandHub;
 import optimalplugin.command.commands.world.CommandSpawn;
+import optimalplugin.listener.global.SignColor;
 import optimalplugin.listener.global.SpawnGamemode;
 import optimalplugin.listener.global.SpawnSpeed;
 import optimalplugin.utils.MessageUtils;
@@ -45,6 +46,7 @@ public class OptimalPlugin extends JavaPlugin {
 		new CommandBack(this);
 
 		// Global listeners.
+		new SignColor(this);
 		new SpawnSpeed(this);
 		new SpawnGamemode(this);
 
