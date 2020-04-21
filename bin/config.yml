@@ -1,0 +1,16 @@
+no-permissions-error: "&4&l(!)&c You do not have permission to do this."
+console-error: "&4&l(!)&c Only players can execute this command."
+invalid-player-error: "&4&l(!)&c A valid player must be provided."
+argument-error: "&4&l(!)&c A valid amount of arguments must be provided! Usage: <usage>"
+
+CommandHead:
+  head-message: "&6&l(!)&e You have received the player head of <player>&e."
+
+CommandHub:
+  hub-message: "&6&l(!)&e Teleporting to &e&lHub&e..."
+  spawn-message: "&6&l(!)&e Teleporting to &e&lSpawn&e..."
+
+CommandBack:
+  back-error: "&4&l(!)&c There is no stored location for you to teleport back to."
+  back-message: "&6&l(!)&e Teleporting to your last location..."
+

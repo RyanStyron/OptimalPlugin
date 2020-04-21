@@ -1,0 +1,17 @@
+name: OptimalPlugin
+version: 1.0
+author: RySty
+main: optimalplugin.OptimalPlugin
+api-version: 1.15
+
+commands:
+  head:
+  hub:
+  spawn:
+  back:
+  home:
+  delhome:
+  sethome:
+  warp:
+  delwarp:
+  setwarp:
