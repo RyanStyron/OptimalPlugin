@@ -6,6 +6,7 @@ api-version: 1.15
 
 commands:
   head:
+    aliases: [playerhead]
   hub:
   spawn:
   back:
@@ -14,5 +15,6 @@ commands:
     aliases: [delhome]
   sethome:
   warp:
-  delwarp:
+  deletewarp:
+    aliases: [delwarp]
   setwarp:

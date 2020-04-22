@@ -21,3 +21,10 @@ CommandHome:
   home-created-message: "&6&l(!)&e Your home has been set to your current coordinates."
   home-teleport-message: "&6&l(!)&e Teleporting to your home..."
 
+CommandWarp:
+  permission-error: "&4&l(!)&c You do not have permission to teleport to this warp."
+  warp-null-error: "&4&l(!)&c There is no set warp with the name provided."
+  warp-exists-error: "&4&l(!)&c A warp with this name already exists!"
+  warp-message: "&6&l(!)&e Teleporting to warp &e&l<warp>&e..."
+  warp-set-message: "&6&l(!)&e The warp been set to your current location."
+  warp-deleted-message: "&6&l(!)&e The warp &e&l<warp>&e has been deleted."

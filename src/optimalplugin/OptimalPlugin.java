@@ -11,6 +11,9 @@ import optimalplugin.command.commands.world.CommandSpawn;
 import optimalplugin.command.commands.world.home.CommandDeleteHome;
 import optimalplugin.command.commands.world.home.CommandHome;
 import optimalplugin.command.commands.world.home.CommandSetHome;
+import optimalplugin.command.commands.world.warp.CommandDeleteWarp;
+import optimalplugin.command.commands.world.warp.CommandSetWarp;
+import optimalplugin.command.commands.world.warp.CommandWarp;
 import optimalplugin.listener.global.SignColor;
 import optimalplugin.listener.global.SpawnGamemode;
 import optimalplugin.utils.MessageUtils;
@@ -49,6 +52,9 @@ public class OptimalPlugin extends JavaPlugin {
 		new CommandHome(this);
 		new CommandSetHome(this);
 		new CommandDeleteHome(this);
+		new CommandWarp(this);
+		new CommandSetWarp(this);
+		new CommandDeleteWarp(this);
 
 		// Global listeners.
 		new SignColor(this);
