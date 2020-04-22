@@ -18,3 +18,5 @@ commands:
   deletewarp:
     aliases: [delwarp]
   setwarp:
+  randomteleport:
+    aliases: [rtp]

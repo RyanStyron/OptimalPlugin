@@ -28,3 +28,6 @@ CommandWarp:
   warp-message: "&6&l(!)&e Teleporting to warp &e&l<warp>&e..."
   warp-set-message: "&6&l(!)&e The warp been set to your current location."
   warp-deleted-message: "&6&l(!)&e The warp &e&l<warp>&e has been deleted."
+
+CommandRandomTeleport:
+  randomteleport-message: "&6&l(!)&e Teleporting to coordinates <coordinates>&e..."

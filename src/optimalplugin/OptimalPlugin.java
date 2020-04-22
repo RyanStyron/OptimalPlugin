@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import optimalplugin.command.commands.general.CommandHead;
 import optimalplugin.command.commands.world.CommandBack;
 import optimalplugin.command.commands.world.CommandHub;
+import optimalplugin.command.commands.world.CommandRandomTeleport;
 import optimalplugin.command.commands.world.CommandSpawn;
 import optimalplugin.command.commands.world.home.CommandDeleteHome;
 import optimalplugin.command.commands.world.home.CommandHome;
@@ -55,6 +56,7 @@ public class OptimalPlugin extends JavaPlugin {
 		new CommandWarp(this);
 		new CommandSetWarp(this);
 		new CommandDeleteWarp(this);
+		new CommandRandomTeleport(this);
 
 		// Global listeners.
 		new ListenerSign(this);
