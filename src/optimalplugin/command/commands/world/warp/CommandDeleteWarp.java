@@ -15,7 +15,7 @@ public class CommandDeleteWarp implements CommandExecutor {
     private FileConfiguration warpFile = warpFileManager.getData();
 
     public CommandDeleteWarp(OptimalPlugin plugin) {
-        plugin.getCommand("deletehome").setExecutor(this);
+        plugin.getCommand("deletewarp").setExecutor(this);
     }
 
     @Override
