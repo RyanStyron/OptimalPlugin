@@ -22,19 +22,22 @@ public class CommandRandomTeleport implements CommandExecutor {
             if (sender instanceof Player) {
                 if (args.length == 0) {
                     Player player = (Player) sender;
+                    Location location = player.getLocation();
                     Random random = new Random(65);
-                    int x;
-                    int y;
-                    int z;
+                    int x = 0;
+                    int y = 25;
+                    int z = 0;
 
-                    x = random.nextInt(5000);
-                    y = random.nextInt(5000);
-                    z = random.nextInt(5000);
+                    while (x > 5000 || x < 150)
+                        x = random.nextInt((location.getBlockX() + 12) * 10);
+                    while (z > 5000 || z < 150)
+                        z = random.nextInt((location.getBlockZ() + 12) * 10);
                     Location randomLocation = new Location(player.getWorld(), x, y, z);
 
                     player.teleport(randomLocation);
+                    player.teleport(player.getWorld().getHighestBlockAt(location).getLocation().add(0, 1, 0));
                     MessageUtils.configMessage(sender, "CommandRandomTeleport.randomteleport-message", "<coordinates>",
-                            x + ", " + y + ", " + z);
+                            x + ", " + location.getBlockY() + ", " + z);
                 } else
                     MessageUtils.argumentError(sender, "/randomteleport");
             } else
