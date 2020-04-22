@@ -9,9 +9,9 @@ import org.bukkit.event.player.PlayerMoveEvent;
 
 import optimalplugin.OptimalPlugin;
 
-public class SpawnGamemode implements Listener {
+public class ListenerSpawn implements Listener {
 
-    public SpawnGamemode(OptimalPlugin plugin) {
+    public ListenerSpawn(OptimalPlugin plugin) {
         OptimalPlugin.manager.registerEvents(this, plugin);
     }
 

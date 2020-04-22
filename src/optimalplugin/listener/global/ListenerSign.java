@@ -7,9 +7,9 @@ import org.bukkit.event.block.SignChangeEvent;
 import optimalplugin.OptimalPlugin;
 import optimalplugin.utils.MessageUtils;
 
-public class SignColor implements Listener {
+public class ListenerSign implements Listener {
 
-    public SignColor(OptimalPlugin plugin) {
+    public ListenerSign(OptimalPlugin plugin) {
         OptimalPlugin.manager.registerEvents(this, plugin);
     }
 
