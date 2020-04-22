@@ -29,7 +29,7 @@ public class CommandDeleteWarp implements CommandExecutor {
                         warpFile.set("warps." + warp, null);
                         warpFileManager.saveData();
 
-                        MessageUtils.configMessage(sender, "CommandWarp.", "<warp>", warp);
+                        MessageUtils.configMessage(sender, "CommandWarp.warp-deleted-message", "<warp>", warp);
                     } else
                         MessageUtils.configMessage(sender, "CommandWarp.warp-null-error", null, null);
                 } else
