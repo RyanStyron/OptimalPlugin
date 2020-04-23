@@ -28,8 +28,8 @@ public class CommandRandomTeleport implements CommandExecutor {
 
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
 							"minecraft:spreadplayers " + x + " " + z + " 50 5000 false " + player.getName());
-					MessageUtils.configMessage(sender, "CommandRandomTeleport.randomteleport-message", "<coordinates>",
-							x + ", " + y + ", " + z);
+					MessageUtils.configMessage(sender, "CommandRandomTeleport.randomteleport-message",
+							" to coordinates <coordinates>&e", "");
 				} else
 					MessageUtils.argumentError(sender, "/randomteleport");
 			} else
