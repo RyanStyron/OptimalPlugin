@@ -1,7 +1,6 @@
 package optimalplugin.command.commands.world;
 
-import java.util.Random;
-
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -23,21 +22,14 @@ public class CommandRandomTeleport implements CommandExecutor {
 				if (args.length == 0) {
 					Player player = (Player) sender;
 					Location location = player.getLocation();
-					Random random = new Random(65);
-					int x = 0;
-					int y = 25;
-					int z = 0;
+					int x = location.getBlockX();
+					int y = location.getBlockY();
+					int z = location.getBlockZ();
 
-					while (x > 5000 || x < 150)
-						x = random.nextInt((Math.abs(location.getBlockX()) + 12) * 10);
-					while (z > 5000 || z < 150)
-						z = random.nextInt((Math.abs(location.getBlockZ()) + 12) * 10);
-					Location randomLocation = new Location(player.getWorld(), x, y, z);
-
-					player.teleport(randomLocation);
-					player.teleport(player.getWorld().getHighestBlockAt(location).getLocation().add(0, 1, 0));
+					Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+							"minecraft:spreadplayers " + x + " " + z + " 50 5000 false " + player.getName());
 					MessageUtils.configMessage(sender, "CommandRandomTeleport.randomteleport-message", "<coordinates>",
-							x + ", " + location.getBlockY() + ", " + z);
+							x + ", " + y + ", " + z);
 				} else
 					MessageUtils.argumentError(sender, "/randomteleport");
 			} else
