@@ -23,9 +23,10 @@ public class CommandRandomTeleport implements CommandExecutor {
 					Player player = (Player) sender;
 					Location location = player.getLocation();
 					int x = location.getBlockX();
-					int y = location.getBlockY();
 					int z = location.getBlockZ();
 
+					if (player.getWorld() != Bukkit.getWorld("world") && Bukkit.getWorld("world") != null)
+						player.teleport(Bukkit.getWorld("world").getSpawnLocation());
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
 							"minecraft:spreadplayers " + x + " " + z + " 50 5000 false " + player.getName());
 					MessageUtils.configMessage(sender, "CommandRandomTeleport.randomteleport-message",
