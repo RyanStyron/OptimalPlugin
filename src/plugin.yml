@@ -8,6 +8,7 @@ commands:
   head:
     aliases: [playerhead]
   hat:
+  rename:
   hub:
   spawn:
   back:

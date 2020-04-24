@@ -11,6 +11,10 @@ CommandHat:
   hat-message: "&6&l(!)&e Your hat has been set."
   hat-sender-message: "&6&l(!)&e The hat of <player>&e has been set."
 
+CommandRename:
+  rename-error: "&4&l(!)&c You must have an item in your hand to rename."
+  rename-message: "&6&l(!)&e Your main hand item has been renamed."
+
 CommandHub:
   block-error: "&4&l(!)&c You can not modify blocks within 50 blocks of spawn."
   hub-message: "&6&l(!)&e Teleporting to &e&lHub&e..."

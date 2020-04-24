@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import optimalplugin.command.commands.general.CommandHat;
 import optimalplugin.command.commands.general.CommandHead;
+import optimalplugin.command.commands.general.CommandRename;
 import optimalplugin.command.commands.world.CommandBack;
 import optimalplugin.command.commands.world.CommandHub;
 import optimalplugin.command.commands.world.CommandRandomTeleport;
@@ -47,6 +48,7 @@ public class OptimalPlugin extends JavaPlugin {
 		// General commands.
 		new CommandHead(this);
 		new CommandHat(this);
+		new CommandRename(this);
 
 		// World commands.
 		new CommandHub(this);
