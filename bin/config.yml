@@ -12,6 +12,7 @@ CommandHat:
   hat-sender-message: "&6&l(!)&e The hat of <player>&e has been set."
 
 CommandHub:
+  block-error: "&4&l(!)&c You can not modify blocks within 50 blocks of spawn."
   hub-message: "&6&l(!)&e Teleporting to &e&lHub&e..."
   spawn-message: "&6&l(!)&e Teleporting to &e&lSpawn&e..."
 

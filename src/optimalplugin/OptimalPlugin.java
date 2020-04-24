@@ -16,6 +16,7 @@ import optimalplugin.command.commands.world.home.CommandSetHome;
 import optimalplugin.command.commands.world.warp.CommandDeleteWarp;
 import optimalplugin.command.commands.world.warp.CommandSetWarp;
 import optimalplugin.command.commands.world.warp.CommandWarp;
+import optimalplugin.listener.global.ListenerJoin;
 import optimalplugin.listener.global.ListenerSign;
 import optimalplugin.listener.global.ListenerSpawn;
 import optimalplugin.utils.FileManagers.BackFileManager;
@@ -60,6 +61,7 @@ public class OptimalPlugin extends JavaPlugin {
 		new CommandRandomTeleport(this);
 
 		// Global listeners.
+		new ListenerJoin(this);
 		new ListenerSign(this);
 		new ListenerSpawn(this);
 
