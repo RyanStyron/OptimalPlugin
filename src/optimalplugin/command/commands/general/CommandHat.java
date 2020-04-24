@@ -1,11 +1,13 @@
 package optimalplugin.command.commands.general;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 
 import optimalplugin.OptimalPlugin;
 import optimalplugin.utils.MessageUtils;
@@ -34,10 +36,13 @@ public class CommandHat implements CommandExecutor {
                     if (target == null)
                         MessageUtils.invalidPlayerError(sender);
                     else {
-                        if (target.getInventory().getItemInMainHand() != null) {
-                            ItemStack item = target.getInventory().getItemInMainHand();
+                        PlayerInventory inventory = target.getInventory();
+                        ItemStack mainHandItem = inventory.getItemInMainHand();
 
-                            target.getInventory().setHelmet(item);
+                        if (target.getInventory().getItemInMainHand() != new ItemStack(Material.AIR)) {
+                            inventory.removeItem(mainHandItem);
+                            inventory.setHelmet(mainHandItem);
+                            target.updateInventory();
                             if (target != sender)
                                 MessageUtils.configMessage(sender, "CommandHat.hat-sender-message", "<player>",
                                         target.getName());
