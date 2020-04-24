@@ -1,6 +1,5 @@
 package optimalplugin.command.commands.general;
 
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,6 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
 import optimalplugin.OptimalPlugin;
+import optimalplugin.utils.MaterialUtils;
 import optimalplugin.utils.MessageUtils;
 
 public class CommandRename implements CommandExecutor {
@@ -31,8 +31,10 @@ public class CommandRename implements CommandExecutor {
                         PlayerInventory inventory = player.getInventory();
                         ItemStack item = inventory.getItemInMainHand();
 
-                        if (item != new ItemStack(Material.AIR) || item != null) {
+                        if (!MaterialUtils.isAir(item.getType())) {
                             item.getItemMeta().setDisplayName(name);
+
+                            inventory.setItemInMainHand(item);
                             player.updateInventory();
                             MessageUtils.configMessage(sender, "CommandRename.rename-message", null, null);
                         } else
