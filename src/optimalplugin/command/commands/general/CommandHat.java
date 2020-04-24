@@ -38,10 +38,10 @@ public class CommandHat implements CommandExecutor {
                     else {
                         PlayerInventory inventory = target.getInventory();
                         ItemStack mainHandItem = inventory.getItemInMainHand();
-                        ItemStack helmetItem = inventory.getHelmet();
 
                         if (target.getInventory().getItemInMainHand() != new ItemStack(Material.AIR)) {
-                            inventory.addItem(helmetItem);
+                            if (inventory.getHelmet() != null)
+                                inventory.addItem(inventory.getHelmet());
                             inventory.removeItem(mainHandItem);
                             inventory.setHelmet(mainHandItem);
                             target.updateInventory();
