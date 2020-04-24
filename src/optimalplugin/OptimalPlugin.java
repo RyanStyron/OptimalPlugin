@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import optimalplugin.command.commands.general.CommandHat;
 import optimalplugin.command.commands.general.CommandHead;
 import optimalplugin.command.commands.world.CommandBack;
 import optimalplugin.command.commands.world.CommandHub;
@@ -17,7 +18,6 @@ import optimalplugin.command.commands.world.warp.CommandSetWarp;
 import optimalplugin.command.commands.world.warp.CommandWarp;
 import optimalplugin.listener.global.ListenerSign;
 import optimalplugin.listener.global.ListenerSpawn;
-import optimalplugin.utils.MessageUtils;
 import optimalplugin.utils.FileManagers.BackFileManager;
 import optimalplugin.utils.FileManagers.HomeFileManager;
 import optimalplugin.utils.FileManagers.WarpFileManager;
@@ -45,6 +45,7 @@ public class OptimalPlugin extends JavaPlugin {
 
 		// General commands.
 		new CommandHead(this);
+		new CommandHat(this);
 
 		// World commands.
 		new CommandHub(this);
@@ -62,11 +63,11 @@ public class OptimalPlugin extends JavaPlugin {
 		new ListenerSign(this);
 		new ListenerSpawn(this);
 
-		System.out.println(MessageUtils.convertChatColors("&6&l(!)&e OptimalPlugin enabled!"));
+		System.out.println("(!) OptimalPlugin enabled!");
 	}
 
 	@Override
 	public void onDisable() {
-		System.out.println(MessageUtils.convertChatColors("&4&l(!)&c OptimalPlugin disabled!"));
+		System.out.println("(!) OptimalPlugin disabled!");
 	}
 }

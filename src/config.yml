@@ -6,6 +6,11 @@ argument-error: "&4&l(!)&c A valid amount of arguments must be provided! Usage: 
 CommandHead:
   head-message: "&6&l(!)&e You have received the player head of <player>&e."
 
+CommandHat:
+  hat-error: "&4&l(!)&c Air cannot be set as a hat."
+  hat-message: "&6&l(!)&e Your hat has been set."
+  hat-sender-message: "&6&l(!)&e The hat of <player>&e has been set."
+
 CommandHub:
   hub-message: "&6&l(!)&e Teleporting to &e&lHub&e..."
   spawn-message: "&6&l(!)&e Teleporting to &e&lSpawn&e..."

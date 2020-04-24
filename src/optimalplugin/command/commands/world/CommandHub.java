@@ -21,8 +21,8 @@ public class CommandHub implements CommandExecutor {
                 if (args.length == 0) {
                     Player player = (Player) sender;
 
-                    if (Bukkit.getWorld("world") != null)
-                        player.teleport(Bukkit.getWorld("world").getSpawnLocation());
+                    if (Bukkit.getWorld("flatroom") != null)
+                        player.teleport(Bukkit.getWorld("flatroom").getSpawnLocation());
                     else
                         player.teleport(player.getWorld().getSpawnLocation());
                     MessageUtils.configMessage(sender, "CommandHub.hub-message", null, null);
