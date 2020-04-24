@@ -5,11 +5,13 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.player.PlayerBucketEvent;
+import org.bukkit.event.player.PlayerBucketEmptyEvent;
+import org.bukkit.event.player.PlayerBucketFillEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 import optimalplugin.OptimalPlugin;
@@ -30,7 +32,7 @@ public class ListenerSpawn implements Listener {
         GameMode gamemode = player.getGameMode();
 
         if (playerLocation.distanceSquared(spawnLocation) <= 10000 && gamemode == GameMode.SURVIVAL) {
-            if (playerWorld == Bukkit.getWorld("flatroom"))
+            if (!playerWorld.equals(Bukkit.getWorld("world")))
                 player.setGameMode(GameMode.ADVENTURE);
         } else if (playerLocation.distanceSquared(spawnLocation) > 10000 && gamemode == GameMode.ADVENTURE)
             player.setGameMode(GameMode.SURVIVAL);
@@ -38,42 +40,46 @@ public class ListenerSpawn implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
-        Player player = event.getPlayer();
-        Location location = player.getLocation();
-        World world = location.getWorld();
-        Location spawnLocation = world.getSpawnLocation();
-
-        if (world == Bukkit.getWorld("world"))
-            if (location.distanceSquared(spawnLocation) <= 2500 && player.getGameMode() == GameMode.SURVIVAL) {
-                event.setCancelled(true);
-                MessageUtils.configMessage(player, "CommandHub.block-error", null, null);
-            }
+        cancelEvent(event.getPlayer(), event);
     }
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
-        Player player = event.getPlayer();
-        Location location = player.getLocation();
-        World world = location.getWorld();
-        Location spawnLocation = world.getSpawnLocation();
-
-        if (world == Bukkit.getWorld("world"))
-            if (location.distanceSquared(spawnLocation) <= 2500 && player.getGameMode() == GameMode.SURVIVAL) {
-                event.setCancelled(true);
-                MessageUtils.configMessage(player, "CommandHub.block-error", null, null);
-            }
+        cancelEvent(event.getPlayer(), event);
     }
 
     @EventHandler
-    public void onPlayerBucket(PlayerBucketEvent event) {
-        Player player = event.getPlayer();
+    public void onPlayerBucketEmpty(PlayerBucketEmptyEvent event) {
+        cancelEvent(event.getPlayer(), event);
+    }
+
+    @EventHandler
+    public void onPlayerBucketFill(PlayerBucketFillEvent event) {
+        cancelEvent(event.getPlayer(), event);
+    }
+
+    private void cancelEvent(Player player, Event event) {
         Location location = player.getLocation();
         World world = location.getWorld();
         Location spawnLocation = world.getSpawnLocation();
 
-        if (world == Bukkit.getWorld("world"))
+        if (world.equals(Bukkit.getWorld("world")))
             if (location.distanceSquared(spawnLocation) <= 2500 && player.getGameMode() == GameMode.SURVIVAL) {
-                event.setCancelled(true);
+
+                switch (event.getEventName()) {
+                    case "PlayerBucketFillEvent":
+                        ((PlayerBucketFillEvent) event).setCancelled(true);
+                        break;
+                    case "PlayerBucketEmptyEvent":
+                        ((PlayerBucketEmptyEvent) event).setCancelled(true);
+                        break;
+                    case "BlockPlaceEvent":
+                        ((BlockPlaceEvent) event).setCancelled(true);
+                        break;
+                    case "BlockBreakEvent":
+                        ((BlockBreakEvent) event).setCancelled(true);
+                        break;
+                }
                 MessageUtils.configMessage(player, "CommandHub.block-error", null, null);
             }
     }
