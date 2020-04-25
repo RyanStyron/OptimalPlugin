@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import optimalplugin.OptimalPlugin;
 import optimalplugin.utils.MaterialUtils;
@@ -27,14 +28,14 @@ public class CommandRename implements CommandExecutor {
 
                         for (int i = 0; i < args.length; i++)
                             name += args[i] + " ";
-                        System.out.println(player.getName() + " renamed their item to: " + name);
 
                         PlayerInventory inventory = player.getInventory();
                         ItemStack item = inventory.getItemInMainHand();
+                        ItemMeta itemMeta = item.getItemMeta();
 
                         if (!MaterialUtils.isAir(item.getType())) {
-                            item.getItemMeta().setDisplayName(MessageUtils.convertChatColors(name));
-
+                            itemMeta.setDisplayName(MessageUtils.convertChatColors(name));
+                            item.setItemMeta(itemMeta);
                             inventory.setItemInMainHand(item);
                             player.updateInventory();
                             MessageUtils.configMessage(sender, "CommandRename.rename-message", null, null);
