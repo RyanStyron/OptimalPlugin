@@ -1,9 +1,13 @@
 package optimalplugin.command.commands.world.warp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
@@ -11,13 +15,14 @@ import optimalplugin.OptimalPlugin;
 import optimalplugin.utils.MessageUtils;
 import optimalplugin.utils.FileManagers.WarpFileManager;
 
-public class CommandSetWarp implements CommandExecutor {
+public class CommandSetWarp implements CommandExecutor, TabCompleter {
 
     private WarpFileManager warpFileManager = OptimalPlugin.warpFileManager;
     private FileConfiguration warpFile = warpFileManager.getData();
 
     public CommandSetWarp(OptimalPlugin plugin) {
         plugin.getCommand("setwarp").setExecutor(this);
+        plugin.getCommand("setwarp").setTabCompleter(this);
     }
 
     @Override
@@ -63,5 +68,19 @@ public class CommandSetWarp implements CommandExecutor {
                 MessageUtils.permissionsError(sender);
         }
         return false;
+    }
+    
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length == 1) {
+            List<String> warps = new ArrayList<>();
+
+            if (warpFile.getConfigurationSection("warps") != null) {
+                for (String key : warpFile.getConfigurationSection("warps").getKeys(false))
+                    warps.add(key);
+                return warps;
+            }
+        }
+        return null;
     }
 }
