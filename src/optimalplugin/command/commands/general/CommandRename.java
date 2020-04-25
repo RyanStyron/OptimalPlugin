@@ -27,12 +27,13 @@ public class CommandRename implements CommandExecutor {
 
                         for (int i = 0; i < args.length; i++)
                             name += args[i] + " ";
+                        System.out.println(player.getName() + " renamed their item to: " + name);
 
                         PlayerInventory inventory = player.getInventory();
                         ItemStack item = inventory.getItemInMainHand();
 
                         if (!MaterialUtils.isAir(item.getType())) {
-                            item.getItemMeta().setDisplayName(name);
+                            item.getItemMeta().setDisplayName(MessageUtils.convertChatColors(name));
 
                             inventory.setItemInMainHand(item);
                             player.updateInventory();

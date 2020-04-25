@@ -1,7 +1,6 @@
 package optimalplugin.command.commands.general;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
 import optimalplugin.OptimalPlugin;
+import optimalplugin.utils.MaterialUtils;
 import optimalplugin.utils.MessageUtils;
 
 public class CommandHat implements CommandExecutor {
@@ -39,7 +39,7 @@ public class CommandHat implements CommandExecutor {
                         PlayerInventory inventory = target.getInventory();
                         ItemStack mainHandItem = inventory.getItemInMainHand();
 
-                        if (target.getInventory().getItemInMainHand() != new ItemStack(Material.AIR)) {
+                        if (!MaterialUtils.isAir(mainHandItem.getType())) {
                             if (inventory.getHelmet() != null)
                                 inventory.addItem(inventory.getHelmet());
                             inventory.removeItem(mainHandItem);
