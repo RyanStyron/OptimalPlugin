@@ -32,7 +32,7 @@ public class ListenerSpawn implements Listener {
         GameMode gamemode = player.getGameMode();
 
         if (playerLocation.distanceSquared(spawnLocation) <= 10000 && gamemode == GameMode.SURVIVAL) {
-            if (!playerWorld.equals(Bukkit.getWorld("world")))
+            if (playerWorld.equals(Bukkit.getWorld("flatroom")) || playerWorld.equals(Bukkit.getWorld("pvp")))
                 player.setGameMode(GameMode.ADVENTURE);
         } else if (playerLocation.distanceSquared(spawnLocation) > 10000 && gamemode == GameMode.ADVENTURE)
             player.setGameMode(GameMode.SURVIVAL);
