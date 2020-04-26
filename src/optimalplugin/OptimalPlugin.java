@@ -18,6 +18,7 @@ import optimalplugin.command.commands.world.warp.CommandDeleteWarp;
 import optimalplugin.command.commands.world.warp.CommandSetWarp;
 import optimalplugin.command.commands.world.warp.CommandWarp;
 import optimalplugin.listener.global.ListenerJoin;
+import optimalplugin.listener.global.ListenerPvP;
 import optimalplugin.listener.global.ListenerSign;
 import optimalplugin.listener.global.ListenerSpawn;
 import optimalplugin.utils.FileManagers.BackFileManager;
@@ -66,6 +67,7 @@ public class OptimalPlugin extends JavaPlugin {
 		new ListenerJoin(this);
 		new ListenerSign(this);
 		new ListenerSpawn(this);
+		new ListenerPvP(this);
 
 		System.out.println("(!) OptimalPlugin enabled!");
 	}
