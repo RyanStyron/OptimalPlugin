@@ -19,11 +19,14 @@ public class ListenerPvP implements Listener {
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         Entity entity = event.getEntity();
-        Location location = entity.getLocation();
-        World world = location.getWorld();
+        Entity damager = event.getDamager();
+        Location entityLocation = entity.getLocation();
+        Location damagerLocation = damager.getLocation();
+        World world = entityLocation.getWorld();
 
         if (world.equals(Bukkit.getWorld("pvp")))
-            if (location.distanceSquared(world.getSpawnLocation()) <= 100)
+            if (entityLocation.distanceSquared(world.getSpawnLocation()) <= 100
+                    || damagerLocation.distanceSquared(world.getSpawnLocation()) <= 100)
                 event.setCancelled(true);
     }
 }
