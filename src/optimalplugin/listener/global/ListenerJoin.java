@@ -18,7 +18,7 @@ public class ListenerJoin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        if (Bukkit.getWorld("flatroom") != null)
-            player.teleport(Bukkit.getWorld("flatroom").getSpawnLocation());
+        if (Bukkit.getWorld("hub") != null)
+            player.teleport(Bukkit.getWorld("hub").getSpawnLocation());
     }
 }
