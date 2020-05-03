@@ -1,43 +1,43 @@
-no-permissions-error: "&4&l(!)&c You do not have permission to do this."
-console-error: "&4&l(!)&c Only players can execute this command."
-invalid-player-error: "&4&l(!)&c A valid player must be provided."
-argument-error: "&4&l(!)&c A valid amount of arguments must be provided! Usage: <usage>"
+no-permissions-error: "&c&l(!)&f You do not have permission to do this."
+console-error: "&c&l(!)&f Only players can execute this command."
+invalid-player-error: "&c&l(!)&f A valid player must be provided."
+argument-error: "&c&l(!)&f A valid amount of arguments must be provided! Usage: <usage>"
 
 CommandHead:
-  head-message: "&6&l(!)&e You have received the player head of <player>&e."
+  head-message: "&6&l(!)&f You have received the player head of &e<player>&f."
 
 CommandHat:
-  hat-error: "&4&l(!)&c Air cannot be set as a hat."
-  hat-message: "&6&l(!)&e Your hat has been set."
-  hat-sender-message: "&6&l(!)&e The hat of <player>&e has been set."
+  hat-error: "&c&l(!)&f Air cannot be set as a hat."
+  hat-message: "&a&l(!)&f Your hat has been set."
+  hat-sender-message: "&6&l(!)&f The hat of &e<player>&f has been set."
 
 CommandRename:
-  rename-error: "&4&l(!)&c You must have an item in your hand to rename."
-  rename-message: "&6&l(!)&e Your main hand item has been renamed."
+  rename-error: "&c&l(!)&f You must have an item in your hand to rename."
+  rename-message: "&a&l(!)&f Your main hand item has been renamed."
 
 CommandHub:
-  block-error: "&4&l(!)&c You can not modify blocks within 50 blocks of spawn."
-  hub-message: "&6&l(!)&e Teleporting to &e&lHub&e..."
-  spawn-message: "&6&l(!)&e Teleporting to &e&lSpawn&e..."
+  block-error: "&c&l(!)&f You can not modify blocks within 50 blocks of spawn."
+  hub-message: "&6&l(!)&f Warping to &bHub&f..."
+  spawn-message: "&6&l(!)&f Teleporting to &bSpawn&f..."
 
 CommandBack:
-  back-error: "&4&l(!)&c There is no stored location for you to teleport back to."
-  back-message: "&6&l(!)&e Teleporting to your last location..."
+  back-error: "&c&l(!)&f There is no stored location for you to teleport back to."
+  back-message: "&6&l(!)&f Teleporting to your last location..."
 
 CommandHome:
-  home-null-error: "&4&l(!)&c You do not have a home set."
-  home-exists-error: "&4&l(!)&c You already have a home. Use /deletehome before setting a new one."
-  home-deleted-message: "&6&l(!)&e Your home has been deleted."
-  home-created-message: "&6&l(!)&e Your home has been set to your current coordinates."
-  home-teleport-message: "&6&l(!)&e Teleporting to your home..."
+  home-null-error: "&c&l(!)&f You do not have a home set."
+  home-exists-error: "&c&l(!)&f You already have a home. Use /deletehome before setting a new one."
+  home-deleted-message: "&a&l(!)&f Your home has been deleted."
+  home-created-message: "&a&l(!)&f Your home has been set to your current coordinates."
+  home-teleport-message: "&6&l(!)&f Teleporting to your home..."
 
 CommandWarp:
-  permission-error: "&4&l(!)&c You do not have permission to teleport to this warp."
-  warp-null-error: "&4&l(!)&c There is no set warp with the name provided."
-  warp-exists-error: "&4&l(!)&c A warp with this name already exists!"
-  warp-message: "&6&l(!)&e Teleporting to warp &e&l<warp>&e..."
-  warp-set-message: "&6&l(!)&e The warp been set to your current location."
-  warp-deleted-message: "&6&l(!)&e The warp &e&l<warp>&e has been deleted."
+  permission-error: "&c&l(!)&f You do not have permission to teleport to this warp."
+  warp-null-error: "&c&l(!)&f There is no set warp with the name provided."
+  warp-exists-error: "&c&l(!)&f A warp with this name already exists!"
+  warp-message: "&6&l(!)&f Teleporting to warp &b<warp>&f..."
+  warp-set-message: "&6&l(!)&f The warp been set to your current location."
+  warp-deleted-message: "&6&l(!)&f The warp &b<warp>&f has been deleted."
 
 CommandRandomTeleport:
-  randomteleport-message: "&6&l(!)&e Teleporting to coordinates <coordinates>&e..."
+  randomteleport-message: "&6&l(!)&f Teleporting to coordinates &b<coordinates>&f..."
